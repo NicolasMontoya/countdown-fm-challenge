@@ -11,7 +11,7 @@
         {{ props.value }}
       </div>
     </div>
-    <div class="counterdown__unit">{{ props.label }}</div>
+    <h2 class="counterdown__unit">{{ props.label }}</h2>
   </article>
 </template>
 
@@ -54,10 +54,10 @@
       color: var(--grayish-blue);
     }
     &__card {
-      @include size(var(--card-size));
+      @include size(var(--card-size), calc(var(--card-size) - 0.4rem));
       @include flex;
-      border-radius: 10%;
-      box-shadow: 0 0.4rem 0 0 hsl(234, 17%, 12%);
+      border-radius: 4%;
+      box-shadow: 0 0.8rem 0 0 hsl(234, 17%, 12%);
       position: relative;
       &::before,
       &::after {
@@ -96,7 +96,7 @@
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         top: 0;
-        padding-top: 50%;
+        padding-top: 46%;
         background: #2a2b3c;
       }
       &--inferior {
@@ -112,11 +112,19 @@
 
   @media screen and (min-width: 600px) {
     .counterdown {
+      &__unit {
+        margin-top: 1.8rem;
+      }
       &__card {
         &::before,
         &::after {
           @include size(14px);
           top: 45%;
+        }
+      }
+      &__digits {
+        &--superior {
+          padding-top: 48%;
         }
       }
     }

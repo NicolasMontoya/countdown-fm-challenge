@@ -5,14 +5,14 @@
 
 :root {
   // Mobile variables
-  --card-size: 5rem;
+  --card-size: 5.3rem;
   --countdown-border-radius: 50%;
 }
 
 @media screen and (min-width: 600px) {
   :root {
     // desktop variables
-    --card-size: 10.6rem;
+    --card-size: 10.2rem;
     --countdown-border-radius: 50%;
   }
 }

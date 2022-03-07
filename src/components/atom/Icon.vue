@@ -1,6 +1,6 @@
 <template>
   <a :href="props.url" :aria-label="label" :class="props.size">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <slot />
     </svg>
   </a>
@@ -25,6 +25,16 @@
 </script>
 
 <style lang="scss" scoped>
+  .icon {
+    fill: #8385a9;
+  }
+  .icon:hover {
+    fill: var(--soft-red);
+  }
+
+  a:focus > .icon {
+    fill: var(--soft-red);
+  }
   .small {
     width: 1rem;
     height: 1rem;

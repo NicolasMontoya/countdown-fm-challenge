@@ -52,13 +52,13 @@
 
   @media screen and (min-width: 600px) {
     .title {
-      padding: 10rem 0 8rem;
+      padding: 10rem 0 7.9rem;
     }
     .countdown {
       margin: 0 auto;
       display: flex;
       flex-direction: row;
-      gap: 2rem;
+      gap: 2.7rem;
     }
   }
 </style>

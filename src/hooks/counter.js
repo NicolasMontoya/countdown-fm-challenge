@@ -1,12 +1,12 @@
 import { computed, reactive } from 'vue'
 import { getDate, padTwoDigits } from './utils'
 
-const duration = getDate(new Date(1970, 0, 14, 0, 0, 0)).getTime()
+const duration = getDate(new Date(1970, 0, 8, 23, 55, 41)).getTime()
 const state = reactive({
-  days: 0,
-  hours: 0,
-  minutes: 0,
-  seconds: 0,
+  days: 8,
+  hours: 23,
+  minutes: 55,
+  seconds: 41,
 })
 
 const updateCountDown = (timer) => {
