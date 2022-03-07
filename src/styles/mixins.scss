@@ -1,0 +1,49 @@
+// Flex
+// ----------------------------------------------
+@mixin flex(
+  $align-item: center,
+  $justify-content: center,
+  $flex-direction: row
+) {
+  display: flex;
+  align-items: $align-item;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+}
+
+// Size
+// ---------------------------
+@mixin size($width: 100%, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Absolute
+// ---------------------------
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Fixed
+// ---------------------------
+@mixin fixed($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Relative
+// ---------------------------
+@mixin relative($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: relative;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

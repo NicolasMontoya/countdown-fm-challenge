@@ -1,0 +1,18 @@
+@import './mixins.scss';
+@import './global/typography.scss';
+@import './global/layout.scss';
+@import './global/color.scss';
+
+:root {
+  // Mobile variables
+  --card-size: 5rem;
+  --countdown-border-radius: 50%;
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    // desktop variables
+    --card-size: 10.6rem;
+    --countdown-border-radius: 50%;
+  }
+}
