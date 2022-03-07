@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: |
           yarn autoclean
-          yarn build
+          yarn build --base=/${{ github.event.repository.name }}/
       - name: Deploy to GH Page
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
