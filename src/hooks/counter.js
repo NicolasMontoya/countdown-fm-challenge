@@ -1,7 +1,7 @@
 import { computed, reactive } from 'vue'
 import { getDate, padTwoDigits } from './utils'
 
-const duration = getDate(new Date(1970, 0, 8, 23, 55, 41)).getTime()
+const duration = getDate(new Date(1970, 0, 14, 0, 0, 0)).getTime()
 const state = reactive({
   days: 0,
   hours: 0,
