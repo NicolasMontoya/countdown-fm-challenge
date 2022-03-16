@@ -13,10 +13,7 @@
 </template>
 
 <script setup>
-  import { ref, watch } from 'vue'
   import { padTwoDigits } from '../hooks/utils'
-
-  let flip = ref(false)
 
   let props = defineProps({
     value: {
@@ -28,29 +25,10 @@
       required: true,
     },
   })
-
-  let delay = ref(props.value)
-
-  watch(
-    () => props.value,
-    (_, newVal) => {
-      setTimeout(() => {
-        flip.value = true
-        delay.value = newVal
-      }, 375)
-      setTimeout(() => {
-        flip.value = false
-      }, 900)
-    }
-  )
 </script>
 
 <style lang="scss" scoped>
   @import '../styles/mixins.scss';
-
-  .top {
-    z-index: 2;
-  }
   .counterdown {
     &__unit {
       font-size: var(--font-size-unit);
@@ -120,11 +98,6 @@
         padding-bottom: 50%;
         background: var(--dark-desaturated-blue);
         transform-origin: center top;
-
-        &.flip {
-          transform: rotateX(270deg);
-          transition: transform 1s cubic-bezier(0.8, 0.8, 0.375, 1.275);
-        }
       }
     }
   }

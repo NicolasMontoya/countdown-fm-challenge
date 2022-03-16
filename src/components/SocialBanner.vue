@@ -1,9 +1,9 @@
 <template>
-  <section class="social-banner">
+  <div role="contentinfo" aria-label="Social section" class="social-banner">
     <FacebookIcon />
     <PinterestIcon />
     <InstagramIcon />
-  </section>
+  </div>
 </template>
 
 <script setup>
