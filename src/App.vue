@@ -13,7 +13,7 @@
     <h1 class="title">we're launching soon</h1>
   </header>
   <main>
-    <section
+    <div
       class="countdown"
       role="timer"
       aria-live="polite"
@@ -23,7 +23,7 @@
       <Card :value="hours" label="hours" />
       <Card :value="minutes" label="minutes" />
       <Card :value="seconds" label="seconds" />
-    </section>
+    </div>
   </main>
   <footer>
     <SocialBanner />
