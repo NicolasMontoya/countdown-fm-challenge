@@ -1,5 +1,5 @@
 <template>
-  <div role="contentinfo" aria-label="Social section" class="social-banner">
+  <div class="social-banner">
     <FacebookIcon />
     <PinterestIcon />
     <InstagramIcon />
