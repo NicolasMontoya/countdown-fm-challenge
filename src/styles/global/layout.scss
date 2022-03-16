@@ -19,7 +19,7 @@ body {
 body {
   @include size(100vw, 100vh);
   background-image: url('/pattern-hills.svg'), url('/bg-stars.svg'),
-    linear-gradient(to bottom, #1e1f29, #251f2e);
+    linear-gradient(180deg, var(--very-dark-mb-blue) 25%, #241e2b 75%);
   background-repeat: no-repeat;
   background-size: 290% 28%, auto, auto;
   background-position: bottom 0 right -7.8rem, top, top;

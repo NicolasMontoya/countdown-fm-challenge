@@ -1,5 +1,5 @@
 import { computed, reactive } from 'vue'
-import { getDate, padTwoDigits } from './utils'
+import { getDate } from './utils'
 
 const duration = getDate(new Date(1970, 0, 8, 23, 55, 41)).getTime()
 const state = reactive({
@@ -24,10 +24,10 @@ export default () => {
       updateCountDown(Date.now())
     }, 1000)
 
-  const days = computed(() => padTwoDigits(state.days))
-  const hours = computed(() => padTwoDigits(state.hours))
-  const minutes = computed(() => padTwoDigits(state.minutes))
-  const seconds = computed(() => padTwoDigits(state.seconds))
+  const days = computed(() => state.days)
+  const hours = computed(() => state.hours)
+  const minutes = computed(() => state.minutes)
+  const seconds = computed(() => state.seconds)
 
   return {
     ready,

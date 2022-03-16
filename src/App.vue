@@ -1,7 +1,7 @@
 <script setup>
   import './styles/styles.scss'
   import SocialBanner from './components/SocialBanner.vue'
-  import FlipCard from './components/FlipCard.vue'
+  import Card from './components/Card.vue'
   import userCounter from './hooks/counter'
 
   const { ready, seconds, minutes, hours, days } = userCounter()
@@ -19,10 +19,10 @@
       aria-live="polite"
       :aria-label="`Time left ${days} days ${hours} hours ${minutes} minutes`"
     >
-      <FlipCard :value="days" label="days" />
-      <FlipCard :value="hours" label="hours" />
-      <FlipCard :value="minutes" label="minutes" />
-      <FlipCard :value="seconds" label="seconds" />
+      <Card :value="days" label="days" />
+      <Card :value="hours" label="hours" />
+      <Card :value="minutes" label="minutes" />
+      <Card :value="seconds" label="seconds" />
     </section>
   </main>
   <footer>

@@ -1,14 +1,11 @@
 <template>
   <article class="counterdown__time">
     <div class="counterdown__card">
-      <div
-        class="counterdown__digits counterdown__digits--superior"
-        :class="{ flip: flip }"
-      >
-        {{ props.value }}
+      <div class="counterdown__digits counterdown__digits--superior">
+        {{ padTwoDigits(props.value) }}
       </div>
       <div class="counterdown__digits counterdown__digits--inferior">
-        {{ props.value }}
+        {{ padTwoDigits(props.value) }}
       </div>
     </div>
     <h2 class="counterdown__unit">{{ props.label }}</h2>
@@ -17,11 +14,13 @@
 
 <script setup>
   import { ref, watch } from 'vue'
+  import { padTwoDigits } from '../hooks/utils'
 
   let flip = ref(false)
+
   let props = defineProps({
     value: {
-      type: String,
+      type: Number,
       required: true,
     },
     label: {
@@ -30,11 +29,14 @@
     },
   })
 
+  let delay = ref(props.value)
+
   watch(
     () => props.value,
-    () => {
+    (_, newVal) => {
       setTimeout(() => {
         flip.value = true
+        delay.value = newVal
       }, 375)
       setTimeout(() => {
         flip.value = false
@@ -45,6 +47,10 @@
 
 <style lang="scss" scoped>
   @import '../styles/mixins.scss';
+
+  .top {
+    z-index: 2;
+  }
   .counterdown {
     &__unit {
       font-size: var(--font-size-unit);
@@ -86,6 +92,10 @@
       border-radius: inherit;
       box-sizing: border-box;
       backface-visibility: hidden;
+      transform-origin: center bottom;
+      transform: rotateX(0) translate3d(0, 0, 0);
+      transform-style: preserve-3d;
+      -webkit-transform: translate3d(0, 0, 0);
       &--superior,
       &--inferior {
         width: 100%;
@@ -98,6 +108,10 @@
         top: 0;
         padding-top: 46%;
         background: #2a2b3c;
+        &.flip {
+          transform: rotateX(-180deg);
+          transition: transform 1s cubic-bezier(0.8, 0.8, 0.375, 1.275);
+        }
       }
       &--inferior {
         border-top-left-radius: 0;
@@ -105,7 +119,12 @@
         top: 50%;
         padding-bottom: 50%;
         background: var(--dark-desaturated-blue);
-        transform: rotateX(180);
+        transform-origin: center top;
+
+        &.flip {
+          transform: rotateX(270deg);
+          transition: transform 1s cubic-bezier(0.8, 0.8, 0.375, 1.275);
+        }
       }
     }
   }
